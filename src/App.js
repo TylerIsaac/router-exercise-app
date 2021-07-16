@@ -6,6 +6,7 @@ import {
     Link,
 }   from "react-router-dom";
 
+import UserProfile from './UserProfile';
 import NoMatch from './NoMatch';
 
 function Home() {
@@ -22,6 +23,7 @@ function App() {
           <div className="App">
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
+              <Link to="/user/:userId">Profile</Link>
               <Switch>
                 <Route exact path="/">
                     <Home />
@@ -29,6 +31,11 @@ function App() {
                 <Route path="/about">
                     <About />
                 </Route>
+                <Route path="/user/:userId">
+                    <UserProfile />
+                </Route>
+                
+                
                 <Route>
                     <NoMatch />
                 </Route>
